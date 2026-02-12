@@ -55,3 +55,10 @@ body {
   from { opacity: 0; transform: translateY(-4px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* Indeterminate progress bar */
+@keyframes indeterminate {
+  0% { width: 0%; margin-left: 0%; }
+  50% { width: 40%; margin-left: 30%; }
+  100% { width: 0%; margin-left: 100%; }
+}

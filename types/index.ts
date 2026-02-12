@@ -28,3 +28,10 @@ export interface ProcessingJob {
   results: StampResult[];
   error: string | null;
 }
+
+export type VerifyStatus = 'idle' | 'verifying' | 'found' | 'not-found' | 'error';
+
+export interface VerifyResult {
+  found: boolean;
+  text?: string;
+}
