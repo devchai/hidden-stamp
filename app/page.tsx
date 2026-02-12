@@ -151,6 +151,10 @@ export default function Home() {
       )}
 
       <BackgroundGradient />
+
+      <footer className="fixed bottom-4 z-10 text-[11px] text-slate-600 tracking-wider">
+        &copy; {new Date().getFullYear()} DevC. All rights reserved.
+      </footer>
     </main>
   );
 }
