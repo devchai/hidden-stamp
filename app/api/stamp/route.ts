@@ -56,10 +56,11 @@ export async function POST(request: NextRequest) {
 
     // Single file: return PNG directly
     if (processedFiles.length === 1) {
+      const encoded = encodeURIComponent(processedFiles[0].name);
       return new Response(processedFiles[0].buffer, {
         headers: {
           'Content-Type': 'image/png',
-          'Content-Disposition': `attachment; filename="${processedFiles[0].name}"`,
+          'Content-Disposition': `attachment; filename="stamped.png"; filename*=UTF-8''${encoded}`,
         },
       });
     }
