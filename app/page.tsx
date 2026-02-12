@@ -56,10 +56,20 @@ export default function Home() {
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center overflow-hidden">
+      {/* SEO: visible heading + description */}
+      <header className="sr-only">
+        <h1>HiddenStamp — Invisible Image Watermark Tool</h1>
+        <p>
+          Protect your images with invisible watermarks using LSB steganography.
+          Embed hidden text into JPEG, PNG, or WebP files and verify watermarks instantly — free and no sign-up required.
+        </p>
+      </header>
+
       {/* Mode Toggle */}
-      <div className="fixed top-8 z-10 flex items-center gap-1 bg-bg-neutral/80 backdrop-blur-sm border border-border-neutral rounded-full p-1">
+      <nav aria-label="Mode selection" className="fixed top-8 z-10 flex items-center gap-1 bg-bg-neutral/80 backdrop-blur-sm border border-border-neutral rounded-full p-1">
         <button
           onClick={() => handleModeSwitch('stamp')}
+          aria-pressed={mode === 'stamp'}
           className={`px-5 py-2 rounded-full text-xs font-bold uppercase tracking-[0.15em] transition-all ${
             mode === 'stamp'
               ? 'bg-primary text-bg-dark'
@@ -70,6 +80,7 @@ export default function Home() {
         </button>
         <button
           onClick={() => handleModeSwitch('verify')}
+          aria-pressed={mode === 'verify'}
           className={`px-5 py-2 rounded-full text-xs font-bold uppercase tracking-[0.15em] transition-all ${
             mode === 'verify'
               ? 'bg-primary text-bg-dark'
@@ -78,11 +89,11 @@ export default function Home() {
         >
           Verify
         </button>
-      </div>
+      </nav>
 
       {/* Stamp Mode */}
       {mode === 'stamp' && (
-        <>
+        <section aria-label="Embed watermark">
           <div
             className={`transition-all duration-500 ${
               step === 'upload'
@@ -123,18 +134,20 @@ export default function Home() {
               onStartOver={handleStartOver}
             />
           </div>
-        </>
+        </section>
       )}
 
       {/* Verify Mode */}
       {mode === 'verify' && (
-        <VerifyZone
-          status={verify.status}
-          result={verify.result}
-          error={verify.error}
-          onVerify={verify.startVerify}
-          onReset={verify.reset}
-        />
+        <section aria-label="Verify watermark">
+          <VerifyZone
+            status={verify.status}
+            result={verify.result}
+            error={verify.error}
+            onVerify={verify.startVerify}
+            onReset={verify.reset}
+          />
+        </section>
       )}
 
       <BackgroundGradient />
