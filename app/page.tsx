@@ -14,6 +14,7 @@ export default function Home() {
   const {
     status,
     progress,
+    error: processingError,
     startProcessing,
     cancelProcessing,
     downloadResults,
@@ -54,11 +55,11 @@ export default function Home() {
       >
         <FileUploadZone
           files={files}
-          errors={errors}
+          errors={processingError ? [...errors, processingError] : errors}
           onFilesSelected={addFiles}
           onRemoveFile={removeFile}
           onUpload={handleUpload}
-          onDismissErrors={dismissErrors}
+          onDismissErrors={() => { dismissErrors(); reset(); }}
         />
       </div>
 
