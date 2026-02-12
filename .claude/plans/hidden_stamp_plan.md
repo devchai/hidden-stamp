@@ -43,7 +43,7 @@
 - [ ] Shadcn UI 초기화
 - [x] Space Grotesk 폰트 설정
 - [x] 커스텀 컬러 테마 설정 (primary, background-dark, neutral 등)
-- [ ] Git 초기화
+- [x] Git 초기화 (https://github.com/devchai/hidden-stamp)
 
 ## Phase 2: 디자인 시스템
 - [x] globals.css에 다크 테마 및 커스텀 스타일 정의
@@ -83,8 +83,8 @@
 - [x] 에러 핸들링 (파일 크기 제한, 형식 오류 등)
 
 ## Phase 8: 배포 준비
-- [ ] 환경변수 설정
-- [ ] Vercel 배포 설정
+- [x] 환경변수 설정
+- [x] Vercel 배포 설정 (https://hidden-stamp.vercel.app/)
 - [x] 메타 태그 및 SEO 기본 설정
 - [ ] 반응형 디자인 검증
 

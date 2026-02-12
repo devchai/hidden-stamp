@@ -10,7 +10,7 @@ import { BackgroundGradient } from '@/components/BackgroundGradient';
 type Step = 'upload' | 'processing' | 'result';
 
 export default function Home() {
-  const { files, addFiles, removeFile, clearFiles, hasFiles } = useFileUpload();
+  const { files, errors, addFiles, removeFile, clearFiles, dismissErrors, hasFiles } = useFileUpload();
   const {
     status,
     progress,
@@ -54,9 +54,11 @@ export default function Home() {
       >
         <FileUploadZone
           files={files}
+          errors={errors}
           onFilesSelected={addFiles}
           onRemoveFile={removeFile}
           onUpload={handleUpload}
+          onDismissErrors={dismissErrors}
         />
       </div>
 

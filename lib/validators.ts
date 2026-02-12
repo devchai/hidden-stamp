@@ -5,7 +5,7 @@ export function validateImageFile(file: File): string | null {
     return `Unsupported format: ${file.type}`;
   }
   if (file.size > MAX_FILE_SIZE) {
-    return `File too large: ${(file.size / 1024 / 1024).toFixed(1)}MB (max 10MB)`;
+    return `File too large: ${(file.size / 1024 / 1024).toFixed(1)}MB (max 4.5MB)`;
   }
   return null;
 }

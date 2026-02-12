@@ -1,23 +1,27 @@
 'use client';
 
 import { useCallback, useRef, useState } from 'react';
-import { Plus, X } from 'lucide-react';
+import { AlertTriangle, Plus, X } from 'lucide-react';
 import type { ImageFile } from '@/types';
 import { formatFileSize } from '@/lib/utils';
 
 interface FileUploadZoneProps {
   files: ImageFile[];
+  errors?: string[];
   onFilesSelected: (files: FileList) => void;
   onRemoveFile: (id: string) => void;
   onUpload: () => void;
+  onDismissErrors?: () => void;
   disabled?: boolean;
 }
 
 export function FileUploadZone({
   files,
+  errors = [],
   onFilesSelected,
   onRemoveFile,
   onUpload,
+  onDismissErrors,
   disabled,
 }: FileUploadZoneProps) {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -81,7 +85,7 @@ export function FileUploadZone({
             Drop files here
           </p>
           <p className="mt-1 text-white/30 text-[10px] tracking-[0.1em] uppercase">
-            JPG, PNG, WebP up to 10MB
+            JPG, PNG, WebP up to 4.5MB
           </p>
         </div>
         <input
@@ -93,6 +97,25 @@ export function FileUploadZone({
           onChange={handleInputChange}
         />
       </div>
+
+      {/* Error Alert */}
+      {errors.length > 0 && (
+        <div className="w-full px-4 py-3 bg-red-500/10 border border-red-500/30 rounded-lg flex items-start gap-3 animate-[fadeIn_0.2s_ease-out]">
+          <AlertTriangle className="w-4 h-4 text-red-400 mt-0.5 shrink-0" />
+          <div className="flex-1 text-sm text-red-300">
+            {errors.map((err, i) => (
+              <p key={i}>{err}</p>
+            ))}
+          </div>
+          <button
+            onClick={onDismissErrors}
+            className="text-red-400/50 hover:text-red-300 transition-colors"
+            aria-label="Dismiss errors"
+          >
+            <X className="w-4 h-4" />
+          </button>
+        </div>
+      )}
 
       {/* File List */}
       {files.length > 0 && (

@@ -1,4 +1,4 @@
-export const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
+export const MAX_FILE_SIZE = 4.5 * 1024 * 1024; // 4.5MB (Vercel Hobby plan limit)
 export const MAX_FILE_COUNT = 20;
 export const MAX_TEXT_LENGTH = 256;
 
