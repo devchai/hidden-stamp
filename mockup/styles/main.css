@@ -1,0 +1,396 @@
+/* ============================================
+   HiddenStamp - Design Tokens
+   ============================================ */
+:root {
+  --primary: #0df20d;
+  --primary-rgb: 13, 242, 13;
+  --bg-dark: #050505;
+  --bg-neutral: #0a0a0a;
+  --border-neutral: #1a1a1a;
+  --text-primary: #f1f5f9;
+  --text-secondary: #64748b;
+  --text-muted: rgba(255, 255, 255, 0.3);
+  --font-display: 'Space Grotesk', sans-serif;
+  --radius-full: 9999px;
+  --radius-3xl: 1.5rem;
+  --radius-lg: 0.5rem;
+  --transition-default: 0.3s ease;
+  --glow-spread: 0 0 25px rgba(var(--primary-rgb), 0.4);
+  --glow-bar: 0 0 15px rgba(var(--primary-rgb), 0.3);
+}
+
+/* ============================================
+   Base
+   ============================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-display);
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============================================
+   Step Container (Transition)
+   ============================================ */
+[data-component="StepContainer"] {
+  position: relative;
+  width: 100%;
+  max-width: 42rem;
+  padding: 0 1.5rem;
+}
+
+[data-step] {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+[data-step].active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  position: relative;
+}
+
+/* ============================================
+   Step 1: FileUploadZone
+   ============================================ */
+[data-component="FileUploadZone"] {
+  width: 100%;
+  max-width: 42rem;
+}
+
+.drop-zone {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-3xl);
+  background-color: rgba(10, 10, 10, 0.3);
+  cursor: pointer;
+  transition: var(--transition-default);
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%231a1a1a' stroke-width='2' stroke-dasharray='12%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+}
+
+.drop-zone:hover,
+.drop-zone.drag-over {
+  background-color: rgba(var(--primary-rgb), 0.05);
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%230df20d' stroke-width='2' stroke-dasharray='12%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+}
+
+.drop-zone__icon {
+  font-size: 3rem;
+  color: var(--text-secondary);
+  font-weight: 200;
+  transition: color var(--transition-default);
+  line-height: 1;
+}
+
+.drop-zone:hover .drop-zone__icon,
+.drop-zone.drag-over .drop-zone__icon {
+  color: var(--primary);
+}
+
+.drop-zone__label {
+  margin-top: 1rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: color var(--transition-default);
+}
+
+.drop-zone:hover .drop-zone__label {
+  color: var(--text-primary);
+}
+
+.drop-zone__sublabel {
+  margin-top: 0.25rem;
+  color: var(--text-muted);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* File list preview */
+.file-list {
+  width: 100%;
+  max-width: 42rem;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: var(--bg-neutral);
+  border: 1px solid var(--border-neutral);
+  border-radius: var(--radius-lg);
+  font-size: 0.8125rem;
+}
+
+.file-item__name {
+  color: var(--text-primary);
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 60%;
+}
+
+.file-item__size {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+}
+
+.file-item__remove {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: 0 0.25rem;
+  transition: color var(--transition-default);
+}
+
+.file-item__remove:hover {
+  color: #ef4444;
+}
+
+/* ============================================
+   Shared: Primary Button
+   ============================================ */
+.btn-primary {
+  width: 100%;
+  max-width: 16rem;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  background-color: var(--primary);
+  color: var(--bg-dark);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-default);
+}
+
+.btn-primary:hover:not(:disabled) {
+  box-shadow: var(--glow-spread);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.btn-primary:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.btn-primary--wide {
+  max-width: 24rem;
+  padding: 1.5rem 2rem;
+  font-size: 1.125rem;
+  border-radius: var(--radius-lg);
+}
+
+/* ============================================
+   Step 2: ConversionProgress
+   ============================================ */
+[data-component="ConversionProgress"] {
+  width: 100%;
+  max-width: 28rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress__label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.progress__percent {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.progress__track {
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.progress__bar {
+  height: 100%;
+  width: 0%;
+  background: var(--primary);
+  box-shadow: var(--glow-bar);
+  transition: width 0.3s ease;
+}
+
+.btn-cancel {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  transition: color var(--transition-default);
+}
+
+.btn-cancel:hover {
+  color: var(--text-secondary);
+}
+
+/* ============================================
+   Step 3: ProcessingResult
+   ============================================ */
+[data-component="ProcessingResult"] {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.result__icon-wrap {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.result__icon-glow {
+  position: absolute;
+  inset: -1rem;
+  background: rgba(var(--primary-rgb), 0.2);
+  border-radius: 50%;
+  filter: blur(2rem);
+  opacity: 0;
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.result__icon {
+  font-size: 5rem;
+  color: var(--primary);
+  font-weight: 200;
+  position: relative;
+}
+
+.result__message {
+  margin-top: 2rem;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.btn-start-over {
+  margin-top: 4rem;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  transition: color var(--transition-default);
+}
+
+.btn-start-over:hover {
+  color: var(--primary);
+}
+
+/* ============================================
+   BackgroundGradient
+   ============================================ */
+[data-component="BackgroundGradient"] {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.2;
+}
+
+.bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+}
+
+.bg-blob--top-left {
+  top: -10%;
+  left: -10%;
+  width: 40%;
+  height: 40%;
+  background: rgba(var(--primary-rgb), 0.1);
+}
+
+.bg-blob--bottom-right {
+  bottom: -10%;
+  right: -10%;
+  width: 40%;
+  height: 40%;
+  background: rgba(var(--primary-rgb), 0.05);
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 640px) {
+  .drop-zone {
+    aspect-ratio: 4 / 3;
+  }
+
+  .btn-primary {
+    max-width: 100%;
+  }
+
+  .btn-primary--wide {
+    max-width: 100%;
+  }
+}

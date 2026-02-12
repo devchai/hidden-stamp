@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Upload - Minimalist File Conversion</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0df20d",
+                        "background-dark": "#050505",
+                        "neutral-dark": "#0a0a0a",
+                        "neutral-border": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            @apply bg-background-dark text-slate-100;
+        }
+        .custom-dashed-border {
+            background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%231a1a1a' stroke-width='2' stroke-dasharray='12%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+            transition: all 0.3s ease;
+        }
+        .group:hover .custom-dashed-border {
+            background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%230df20d' stroke-width='2' stroke-dasharray='12%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+        }
+        .neon-glow:hover {
+            box-shadow: 0 0 25px rgba(13, 242, 13, 0.4);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center font-display overflow-hidden">
+<main class="w-full max-w-2xl px-6 flex flex-col items-center gap-8">
+<div class="relative group w-full">
+<label class="cursor-pointer" for="file-upload">
+<div class="custom-dashed-border rounded-3xl w-full aspect-[16/10] flex flex-col items-center justify-center bg-neutral-dark/30 hover:bg-primary/5 transition-all">
+<div class="flex flex-col items-center gap-4">
+<span class="material-symbols-outlined text-5xl text-slate-500 group-hover:text-primary transition-colors font-extralight">add</span>
+<p class="text-slate-500 group-hover:text-slate-300 transition-colors tracking-widest text-sm uppercase font-medium">Drop files here</p>
+</div>
+</div>
+<input class="hidden" id="file-upload" multiple="" type="file"/>
+</label>
+</div>
+<button class="w-full md:w-64 py-4 bg-primary text-background-dark font-bold text-sm tracking-[0.2em] uppercase rounded-full neon-glow transition-all active:scale-95">
+            Upload
+        </button>
+</main>
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 opacity-20">
+<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-primary/5 blur-[120px] rounded-full"></div>
+</div>
+
+</body></html>

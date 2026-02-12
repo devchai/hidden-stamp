@@ -1,0 +1,201 @@
+{
+  "version": "2.0",
+  "lastUpdated": "2026-02-12T07:47:05.405Z",
+  "activeFeatures": [
+    "scripts",
+    "01_hidden_stamp",
+    "stamp"
+  ],
+  "primaryFeature": "scripts",
+  "features": {
+    "scripts": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-02-12T07:28:17.304Z",
+        "lastUpdated": "2026-02-12T07:28:17.304Z"
+      },
+      "lastFile": "/Users/devchai/Desktop/00_work/02_dev/02_project/03_web/01_hidden_stamp/mockup/scripts/app.js"
+    },
+    "01_hidden_stamp": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-02-12T07:35:22.830Z",
+        "lastUpdated": "2026-02-12T07:47:05.405Z"
+      },
+      "lastFile": "/Users/devchai/Desktop/00_work/02_dev/02_project/03_web/01_hidden_stamp/app/layout.tsx"
+    },
+    "stamp": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-02-12T07:37:39.708Z",
+        "lastUpdated": "2026-02-12T07:39:47.634Z"
+      },
+      "lastFile": "/Users/devchai/Desktop/00_work/02_dev/02_project/03_web/01_hidden_stamp/app/api/stamp/route.ts"
+    }
+  },
+  "pipeline": {
+    "currentPhase": 1,
+    "level": "Dynamic",
+    "phaseHistory": []
+  },
+  "session": {
+    "startedAt": "2026-02-12T07:14:31.377Z",
+    "onboardingCompleted": false,
+    "lastActivity": "2026-02-12T07:47:05.405Z"
+  },
+  "history": [
+    {
+      "timestamp": "2026-02-12T07:28:17.304Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-12T07:35:22.830Z",
+      "feature": "01_hidden_stamp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-12T07:36:15.708Z",
+      "feature": "01_hidden_stamp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-12T07:36:17.305Z",
+      "feature": "01_hidden_stamp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-12T07:36:20.089Z",
+      "feature": "01_hidden_stamp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-12T07:36:22.427Z",
+      "feature": "01_hidden_stamp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-12T07:36:37.674Z",
+      "feature": "01_hidden_stamp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-12T07:36:49.159Z",
+      "feature": "01_hidden_stamp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-12T07:36:51.590Z",
+      "feature": "01_hidden_stamp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-12T07:37:07.597Z",
+      "feature": "01_hidden_stamp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-12T07:37:11.437Z",
+      "feature": "01_hidden_stamp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-12T07:37:17.890Z",
+      "feature": "01_hidden_stamp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-12T07:37:31.350Z",
+      "feature": "01_hidden_stamp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-12T07:37:39.708Z",
+      "feature": "stamp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-12T07:37:53.232Z",
+      "feature": "01_hidden_stamp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-12T07:38:01.186Z",
+      "feature": "01_hidden_stamp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-12T07:38:28.701Z",
+      "feature": "stamp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-12T07:38:48.118Z",
+      "feature": "stamp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-12T07:38:56.606Z",
+      "feature": "stamp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-12T07:39:05.003Z",
+      "feature": "stamp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-12T07:39:27.017Z",
+      "feature": "stamp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-12T07:39:47.634Z",
+      "feature": "stamp",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-12T07:47:05.405Z",
+      "feature": "01_hidden_stamp",
+      "phase": "do",
+      "action": "updated"
+    }
+  ]
+}

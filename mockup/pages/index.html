@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HiddenStamp - Invisible Watermark</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles/main.css" />
+</head>
+<body>
+
+  <!-- ===== Step 1: File Upload ===== -->
+  <div data-step="upload" class="active">
+    <div data-component="FileUploadZone">
+      <div class="drop-zone">
+        <span class="material-symbols-outlined drop-zone__icon">add</span>
+        <p class="drop-zone__label">Drop files here</p>
+        <p class="drop-zone__sublabel">JPG, PNG, WebP up to 10MB</p>
+      </div>
+      <input type="file" id="file-input" multiple accept="image/jpeg,image/png,image/webp" hidden />
+      <div class="file-list"></div>
+    </div>
+    <button id="btn-upload" class="btn-primary" disabled>Upload</button>
+  </div>
+
+  <!-- ===== Step 2: Conversion Progress ===== -->
+  <div data-step="processing">
+    <div data-component="ConversionProgress">
+      <div class="progress__label">
+        Converting... <span class="progress__percent">0%</span>
+      </div>
+      <div class="progress__track">
+        <div class="progress__bar"></div>
+      </div>
+      <button id="btn-cancel" class="btn-cancel">Cancel</button>
+    </div>
+  </div>
+
+  <!-- ===== Step 3: Processing Result ===== -->
+  <div data-step="result">
+    <div data-component="ProcessingResult">
+      <div class="result__icon-wrap">
+        <div class="result__icon-glow"></div>
+        <span class="material-symbols-outlined result__icon">check_circle</span>
+      </div>
+      <button id="btn-download" class="btn-primary btn-primary--wide">Download All</button>
+      <p class="result__message">3 files processed successfully</p>
+      <button id="btn-start-over" class="btn-start-over">Start over</button>
+    </div>
+  </div>
+
+  <!-- ===== Background Decoration ===== -->
+  <div data-component="BackgroundGradient">
+    <div class="bg-blob bg-blob--top-left"></div>
+    <div class="bg-blob bg-blob--bottom-right"></div>
+  </div>
+
+  <script src="../scripts/app.js"></script>
+</body>
+</html>

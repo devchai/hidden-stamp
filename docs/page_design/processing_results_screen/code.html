@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Success | FileConv</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0df20d",
+                        "background-light": "#f5f8f5",
+                        "background-dark": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .neon-glow:hover {
+            box-shadow: 0 0 25px rgba(13, 242, 13, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 min-h-screen font-display flex flex-col selection:bg-primary/30">
+<nav class="p-8">
+<div class="max-w-6xl mx-auto flex items-center justify-center">
+<div class="flex items-center gap-2 opacity-50 hover:opacity-100 transition-opacity">
+<div class="w-6 h-6 bg-primary rounded-sm flex items-center justify-center">
+<span class="material-icons text-background-dark text-sm font-bold">sync</span>
+</div>
+<span class="text-sm font-bold tracking-tight uppercase">File<span class="text-primary">Conv</span></span>
+</div>
+</div>
+</nav>
+<main class="flex-grow flex flex-col items-center justify-center px-6 -mt-16">
+<div class="mb-12 relative group">
+<div class="absolute -inset-4 bg-primary/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<span class="material-symbols-outlined text-primary text-8xl font-light select-none relative">
+                check_circle
+            </span>
+</div>
+<div class="w-full max-w-sm">
+<button class="w-full bg-primary text-background-dark font-bold text-lg tracking-widest uppercase py-6 rounded-lg transition-all hover:scale-[1.01] active:scale-[0.99] neon-glow">
+                Download All
+            </button>
+</div>
+<p class="mt-8 text-slate-500 text-sm font-medium tracking-wide">
+            12 files processed successfully
+        </p>
+</main>
+<footer class="p-12 text-center">
+<a class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500 hover:text-primary transition-colors duration-300" href="#">
+            Start over
+        </a>
+</footer>
+
+</body></html>

@@ -1,0 +1,25 @@
+{
+  "stamp": {
+    "request": {
+      "files": [
+        { "name": "photo_001.jpg", "size": 2457600, "type": "image/jpeg" },
+        { "name": "banner_design.png", "size": 5242880, "type": "image/png" },
+        { "name": "product_shot.webp", "size": 1048576, "type": "image/webp" }
+      ],
+      "config": {
+        "watermarkText": "HiddenStamp-2026",
+        "outputFormat": "png"
+      }
+    },
+    "response": {
+      "success": true,
+      "results": [
+        { "originalName": "photo_001.jpg", "stampedName": "photo_001_stamped.png", "size": 2621440 },
+        { "originalName": "banner_design.png", "stampedName": "banner_design_stamped.png", "size": 5505024 },
+        { "originalName": "product_shot.webp", "stampedName": "product_shot_stamped.png", "size": 1153434 }
+      ],
+      "totalFiles": 3,
+      "processingTime": 4200
+    }
+  }
+}

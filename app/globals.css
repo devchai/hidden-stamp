@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0df20d;
+  --color-bg-dark: #050505;
+  --color-bg-neutral: #0a0a0a;
+  --color-border-neutral: #1a1a1a;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+:root {
+  --primary-rgb: 13, 242, 13;
+}
+
+body {
+  font-family: var(--font-display);
+  background-color: var(--color-bg-dark);
+  color: #f1f5f9;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Neon glow hover effect */
+.neon-glow:hover:not(:disabled) {
+  box-shadow: 0 0 25px rgba(var(--primary-rgb), 0.4);
+}
+
+/* Custom dashed border for drop zone */
+.custom-dashed-border {
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%231a1a1a' stroke-width='2' stroke-dasharray='12%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  transition: background-image 0.3s ease;
+}
+
+.custom-dashed-border.drag-over,
+.group:hover .custom-dashed-border {
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%230df20d' stroke-width='2' stroke-dasharray='12%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+}
+
+/* Progress bar glow */
+.glow-bar {
+  box-shadow: 0 0 15px rgba(var(--primary-rgb), 0.3);
+}
+
+/* Glow pulse animation for result icon */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
