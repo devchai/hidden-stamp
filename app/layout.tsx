@@ -11,14 +11,17 @@ const SITE_URL = 'https://www.hiddenstamp.com';
 const SITE_NAME = 'HiddenStamp';
 const SITE_DESCRIPTION =
   'Free invisible watermark tool — embed and verify hidden watermarks in JPEG, PNG, WebP images using LSB steganography. Protect your photos and digital art from unauthorized use. No sign-up, no download, works in your browser.';
+const SITE_DESCRIPTION_KO =
+  '무료 비가시 워터마크 도구 — LSB 스테가노그래피로 JPEG, PNG, WebP 이미지에 보이지 않는 워터마크를 삽입하고 검증하세요. 회원가입 없이 브라우저에서 바로 사용할 수 있습니다.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'HiddenStamp — Free Invisible Image Watermark Tool Online',
+    default:
+      'HiddenStamp — Free Invisible Image Watermark Tool | 무료 비가시 워터마크 도구',
     template: '%s | HiddenStamp',
   },
-  description: SITE_DESCRIPTION,
+  description: `${SITE_DESCRIPTION} ${SITE_DESCRIPTION_KO}`,
   keywords: [
     // Core features
     'invisible watermark',
@@ -61,6 +64,29 @@ export const metadata: Metadata = {
     'how to add invisible watermark',
     'detect hidden watermark in image',
     'steganography watermark tool free',
+    // Korean (한국어)
+    '워터마크',
+    '보이지 않는 워터마크',
+    '투명 워터마크',
+    '이미지 워터마크',
+    '디지털 워터마크',
+    '숨겨진 워터마크',
+    '워터마크 넣기',
+    '워터마크 삽입',
+    '워터마크 확인',
+    '워터마크 검증',
+    '워터마크 감지',
+    '스테가노그래피',
+    '이미지 저작권 보호',
+    '사진 워터마크',
+    '사진 저작권',
+    '이미지 보호',
+    '무료 워터마크',
+    '온라인 워터마크',
+    '워터마크 무료 사이트',
+    '이미지 워터마크 넣기',
+    '사진 워터마크 넣는법',
+    '보이지 않는 워터마크 만들기',
   ],
   authors: [{ name: 'HiddenStamp' }],
   creator: 'HiddenStamp',
@@ -187,6 +213,38 @@ const jsonLdFaq = {
       acceptedAnswer: {
         '@type': 'Answer',
         text: 'No. The LSB steganography technique modifies only the least significant bits of pixel data, making the changes imperceptible to the human eye. Your image will look identical before and after watermarking.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '보이지 않는 워터마크란 무엇인가요?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '보이지 않는 워터마크는 사람의 눈에 보이지 않도록 이미지에 숨겨진 메시지입니다. HiddenStamp는 LSB(최하위 비트) 스테가노그래피 기술을 사용하여 이미지 픽셀에 텍스트를 삽입하며, 이미지의 시각적 품질에는 영향을 주지 않습니다.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '이미지에 보이지 않는 워터마크를 어떻게 넣나요?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'HiddenStamp에 이미지(JPEG, PNG, WebP)를 업로드하고 원하는 워터마크 텍스트를 입력한 후 Upload 버튼을 클릭하세요. 보이지 않는 워터마크가 삽입된 PNG 파일을 다운로드할 수 있습니다. 회원가입 없이 무료로 사용 가능합니다.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '이미지에 숨겨진 워터마크를 어떻게 확인하나요?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'HiddenStamp에서 Verify 모드로 전환한 후 이미지를 업로드하고 Verify 버튼을 클릭하세요. 숨겨진 워터마크가 있으면 삽입된 텍스트가 표시됩니다.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'HiddenStamp는 무료인가요?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '네, HiddenStamp는 완전 무료입니다. 회원가입, 로그인, 다운로드 없이 브라우저에서 바로 사용할 수 있으며, 한 번에 최대 20장의 이미지에 워터마크를 넣을 수 있습니다.',
       },
     },
   ],
