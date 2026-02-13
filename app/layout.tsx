@@ -7,7 +7,7 @@ const spaceGrotesk = Space_Grotesk({
   variable: '--font-display',
 });
 
-const SITE_URL = 'https://hidden-stamp.vercel.app';
+const SITE_URL = 'https://www.hiddenstamp.com';
 const SITE_NAME = 'HiddenStamp';
 const SITE_DESCRIPTION =
   'Protect your images with invisible watermarks. Embed and verify hidden watermarks using LSB steganography — free, fast, and no sign-up required.';

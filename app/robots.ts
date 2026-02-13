@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://hidden-stamp.vercel.app';
+  const baseUrl = 'https://www.hiddenstamp.com';
 
   return {
     rules: [
